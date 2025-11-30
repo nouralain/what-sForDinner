@@ -1,0 +1,396 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: var(--violet-700);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+  
+}
+
+:root {
+  
+  --text-xs: 0.75rem;
+  --text-xs-line-height: calc(1 / 0.75);
+
+  --text-sm: 0.875rem;
+  --text-sm-line-height: calc(1.25 / 0.875);
+
+  --text-base: 1rem;
+  --text-base-line-height: calc(1.5 / 1);
+
+  --text-lg: 1.125rem;
+  --text-lg-line-height: calc(1.75 / 1.125);
+
+  --text-xl: 1.25rem;
+  --text-xl-line-height: calc(1.75 / 1.25);
+
+  --text-2xl: 1.5rem;
+  --text-2xl-line-height: calc(2 / 1.5);
+
+  --text-3xl: 1.875rem;
+  --text-3xl-line-height: calc(2.25 / 1.875);
+
+  --text-4xl: 2.25rem;
+  --text-4xl-line-height: 56px;
+
+  --text-5xl: 3rem;
+  --text-5xl-line-height: 60px;
+
+  --text-6xl: 3.75rem;
+  --text-6xl-line-height: 75px;
+
+  --gray-50:#F9FAFB;
+  --gray-100: #6a7282;
+  --gray-200: #4A5565;
+  --gray-300: #364153;
+
+
+  --orange: #FF6900;
+  --light-orange:#FFEDD4;
+--brown:#D08700;
+  --light-brown:#FEF9C2;
+  --red:#FB2C36;
+  --light-red:#FFE2E2;
+  --red-200:#F54A00;
+  --cyan:#2B7FFF;
+  --beige-200:#FFEDD4;
+  --green:#008236;
+  --light-green:#DBFCE7;
+  --blue:#1447e6;
+  --light-blue:#DBEAFE;
+  --pink:#E60076;
+  --light-pink:#FCE7F3;
+  --brown2:#E17100;
+  --light-brown2:#FFFBEB;
+  --yellow:#FFB900;
+
+
+
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--text-xs-line-height);
+}
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--text-sm-line-height);
+}
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--text-base-line-height);
+}
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--text-lg-line-height);
+}
+.text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--text-xl-line-height);
+}
+.text-2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl-line-height);
+}
+.text-3xl {
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl-line-height);
+}
+.text-4xl {
+  font-size: var(--text-4xl);
+  line-height: var(--text-4xk-line-height);
+}
+.text-5xl {
+  font-size: var(--text-5xl);
+  line-height: var(--text-5xl-line-height);
+}
+.text-6xl {
+  font-size: var(--text-6xl);
+  line-height: var(--text-6xl-line-height);
+}
+.text-gray-100{
+  color: var(--gray-100);
+}
+.text-gray-200{
+  color: var(--gray-200);
+}
+.text-gray-300{
+  color: var(--gray-300);
+}
+.text-yellow{
+  color: #FDC700;
+}
+.text-orange{
+  color:var(--orange);
+}
+.text-red{
+  color:var(--red);
+}
+.text-cyan{
+  color:var(--cyan);
+}
+.text-red-200{
+  color: var(--red-200);
+}
+.text-green{
+  color: var(--green);
+}
+.text-blue{
+  color: var(--blue);
+}
+.text-brown{
+  color: var(--brown);
+}
+.text-pink{
+  color: var(--pink);
+}
+
+
+.gradient-orange-1{
+  background-image: linear-gradient(56deg,rgba(255, 104, 0, 1) 0%, rgba(251, 46, 53, 1) 72%);
+}
+
+.bg-gray-50{
+  background-color:var(--gray-50);
+}
+.bg-light-green{
+  background-color:var(--light-green);
+}
+.bg-light-blue{
+  background-color:var(--light-blue);
+}
+.bg-light-orange{
+  background-color:var(--light-orange);
+}
+.bg-light-brown{
+  background-color:var(--light-brown);
+}
+.bg-light-brown2{
+  background-color:var(--light-brown2);
+}
+
+.bg-brown2{
+  background-color:var(--brown2);
+}
+.bg-light-red{
+  background-color:var(--light-red);
+}
+.bg-light-pink{
+  background-color:var(--light-pink);
+}
+
+.bg-orange{
+  background-color:var(--orange);
+}
+.bg-beige{
+  background-color: #FFFAEB;
+}
+.bg-beige-200{
+  background-color:var(--beige-200);
+}
+
+.p-2-8 {
+  padding: 2px 8px;
+}
+
+.p-12-16 {
+  padding: 12px 16px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+.p-16 {
+  padding: 16px;
+}
+.p-24 {
+  padding: 24px;
+}
+.py-30 {
+  padding-block: 2.5rem;
+}
+.px-32 {
+  padding-inline: 2rem;
+}
+
+.p-28 {
+  padding: 28px;
+}
+.p-32 {
+  padding: 32px;
+}
+
+.pt-140 {
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+.pb-50 {
+  padding-top: 80px;
+}
+
+.p-top-16 {
+  padding-top: 16px;
+}
+
+.m-block-16-24 {
+  margin-block: 12px 24px;
+}
+
+.m-top-16 {
+  margin-top: 16px;
+}
+
+.m-auto {
+  margin: auto;
+}
+.m-bottom-4 {
+  margin-bottom: 0.25rem;
+}
+.m-bottom-8 {
+  margin-bottom: 0.5rem;
+}
+.m-bottom-12 {
+  margin-bottom: 0.75rem;
+}
+
+.m-bottom-24 {
+  margin-bottom: 1.5rem;
+}
+
+.m-bottom-16 {
+  margin-bottom: 1rem;
+}
+.m-bottom-32 {
+  margin-bottom: 2rem;
+}
+
+.m-right-265 {
+  padding-right: 230px;
+}
+
+.ratio-1 {
+  aspect-ratio: 1;
+}
+
+.w-50px{
+  width: 50px;
+  height: 50px;
+}
+.h-50px{
+  height: 50px;
+}
+.w-40px{
+  width: 40px;
+}
+.h-40px{
+  height: 40px;
+}
+.w-25px{
+  width: 25px;
+}
+.h-25px{
+  height: 25px;
+}
+.w-20px{
+  width: 20px;
+}
+.h-20px{
+  height: 20px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.scroll-smooth{
+  scroll-behavior: smooth;
+}
+
+.object-center {
+  object-position: center;
+}
+
+.border-top {
+
+  border-top: var(--bs-border-width) var(--bs-border-style)
+    var(--bs-border-color) !important;
+}
+
+.border-radius-10{
+  border-radius: 10px;
+}
+
+
+/* nav************************************* */
+.navbar{
+  border-bottom: #ffedd4 2px solid;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.user-image{
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ffb86a;
+}
+/* nav************************************* */
+
+/* image section************************************* */
+
+.food-image{
+  height:400px ;
+}
+.reviews{
+  top: 20px;
+  left: 20px;
+}
+.info{
+  bottom: 20px;
+  left: 20px;
+  right: 20px
+}
+/* image section************************************* */
+
+.border-yellow{
+
+ border-left: var(--yellow) 4px  solid;}
+
+ .row .food-image , .inner{
+ 
+  box-shadow: 0px 4px 20px 2px rgba(0, 0, 0, 0.177);
+ }
+ 
+ section{
+  height: 1200px ;
+  
+ }
+
+ 
+ .max-height-340{
+  max-height: 340px;
+ }
+
+
