@@ -825,10 +825,10 @@ var meals = [
 ];
 
 function shuffleMeals() {
-  var randomIndex = Math.floor(Math.random() * meals.length);     //for randomizing the indexes (local to keep generating numbers in each click)
-  var container = document.getElementById("container");           //this variable carries the element scope
+  var randomIndex = Math.floor(Math.random() * meals.length); //for randomizing the indexes (local to keep generating numbers in each click)
+  var container = document.getElementById("container"); //this variable carries the element scope
 
-//the replaced content after pressing the button
+  //the replaced content after pressing the button
   container.innerHTML = `<div class="row mt-5">
             <div class="left-side-section col-12 col-lg-5 p-lg-0">
               <div
@@ -1174,15 +1174,15 @@ function shuffleMeals() {
               </div>
             </div>
           </div>`;
- hideAndShowAlert(randomIndex);
-  displayIngredients(randomIndex)
-  displayInstructions(randomIndex)
-  displayTips(randomIndex)
+  hideAndShowAlert(randomIndex);
+  displayIngredients(randomIndex);
+  displayInstructions(randomIndex);
+  displayTips(randomIndex);
 }
 
 //function to show and hide the alert depending on the value of the key "extend"
-function hideAndShowAlert(index){
- var extend = document.getElementById("extend");
+function hideAndShowAlert(index) {
+  var extend = document.getElementById("extend");
 
   if (meals[index].extend === true) {
     extend.classList.remove("d-none");
@@ -1191,52 +1191,48 @@ function hideAndShowAlert(index){
 }
 
 //function to display the ingradients based on how many indexes in the nested array inside the object
-function displayIngredients(index){
-  var ingredientContainer='';       //variable to concat the ingredients inside of it
-  for(var i=0 ; i< meals[index].ingredient.length ; i++){
+function displayIngredients(index) {
+  var ingredientContainer = ""; //variable to concat the ingredients inside of it
+  for (var i = 0; i < meals[index].ingredient.length; i++) {
     ingredientContainer += `<div
                         class="d-flex align-items-center justify-content-start gap-3 mb-3"
                       >
                         <span
                           class="text-white w-25px h-25px rounded-circle bg-orange fw-bold text-xs d-flex align-items-center justify-content-center"
-                          >${i+1}</span
+                          >${i + 1}</span
                         >
                         <p class="text-base text-gray-300 m-0">
                           ${meals[index].ingredient[i]}
                         </p>
-                      </div>`
-                    
-                    
+                      </div>`;
   }
-  document.getElementById('pills-ingredients').innerHTML= ingredientContainer; 
+  document.getElementById("pills-ingredients").innerHTML = ingredientContainer;
 }
 
 //function to display the instructions
-function displayInstructions(index){
-  var instructContainer='';
-  for(var i=0 ; i< meals[index].instructions.length ; i++){
+function displayInstructions(index) {
+  var instructContainer = "";
+  for (var i = 0; i < meals[index].instructions.length; i++) {
     instructContainer += `<div
                         class="d-flex align-items-center justify-content-start gap-3 mb-4"
                       >
                         <div
                           class="p-2 text-white w-50px rounded-4 bg-orange fw-bold text-xl d-flex align-items-center justify-content-center"
                         >
-                          ${i+1}
+                          ${i + 1}
                         </div>
                         <p class="text-base text-gray-300 m-0">
                           ${meals[index].instructions[i]}
                         </p>
-                      </div>`
-                    
-                    
+                      </div>`;
   }
-  document.getElementById('pills-instructions').innerHTML=instructContainer; 
+  document.getElementById("pills-instructions").innerHTML = instructContainer;
 }
 
-//function to display the tips 
-function displayTips(index){
-  var tipsContainer='';
-  for(var i=0 ; i< meals[index].tips.length ; i++){
+//function to display the tips
+function displayTips(index) {
+  var tipsContainer = "";
+  for (var i = 0; i < meals[index].tips.length; i++) {
     tipsContainer += `<div
                         class="border-yellow d-flex align-items-center gap-3 p-3 bg-light-brown2 rounded-3 mb-3"
                       >
@@ -1247,12 +1243,7 @@ function displayTips(index){
                         <p class="text-base text-gray-300 mb-0">
                           ${meals[index].tips[i]}
                         </p>
-                      </div>`
-                    
-                    
+                      </div>`;
   }
-  document.getElementById('pills-chef').innerHTML=tipsContainer; 
+  document.getElementById("pills-chef").innerHTML = tipsContainer;
 }
-
-
-
