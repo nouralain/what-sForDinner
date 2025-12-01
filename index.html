@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>What's For Dinner</title>
-    <link
-      rel="shortcut icon"
-      href="images/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/index.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/media.css" />
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar " class="bg-beige">
@@ -130,8 +126,8 @@
 
     <header>
       <section class="px-4">
-        <div class="container-fluid container-xl">
-          <div class="row  mt-5">
+        <div class="container-fluid container-xl" id="container">
+          <div class="row mt-5">
             <div class="left-side-section col-12 col-lg-5 p-lg-0">
               <div
                 class="food-image overflow-hidden rounded-top-4 rounded-top-0-xl rounded-start-4-xl position-relative"
@@ -183,8 +179,9 @@
                 class="inner rounded-bottom-4 rounded-bottom-0-xl rounded-end-4-xl bg-white p-4 p-lg-5"
               >
                 <div
-                  class="d-md-flex justify-content-md-between align-items-md-center flex-md-row-reverse"
+                  class="d-md-flex flex-column justify-content-md-between align-items-md-center flex-md-row-reverse"
                 >
+                  <!-- save and share icons -->
                   <div
                     class="d-flex justify-content-end align-items-center gap-2"
                   >
@@ -198,6 +195,7 @@
                     ></span>
                   </div>
 
+                  <!-- level and country spans and title and desc -->
                   <div>
                     <div>
                       <span
@@ -216,6 +214,24 @@
                     <p class="text-sm text-lg-md text-gray-100">
                       A classic Italian pasta dish with eggs, cheese, and
                       pancetta
+                    </p>
+                  </div>
+                </div>
+
+                <!-- extend -->
+                <div
+                id="extend"  class=" border-red  align-items-center gap-3 p-3 bg-light-red-50 rounded-3 mb-3 d-none"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation text-red fa-lg"
+                  ></i>
+                  <div>
+                    <h3 class="text-sm text-base-md  fw-semibold text-red-300 mb-0">
+                      Extended Preparation Time
+                    </h3>
+                    <p class="text-xs text-sm-md text-red-200 mb-0">
+                      This recipe requires more than 45 minutes to prepare. Plan
+                      accordingly!
                     </p>
                   </div>
                 </div>
@@ -305,7 +321,7 @@
                   </ul>
 
                   <!-- content inside tabs -->
-                  <div class="tab-content" id="pills-tabContent">
+                  <div  class="tab-content" id="pills-tabContent">
                     <div
                       class="tab-pane fade show active rounded-4 max-height-340 p-4 overflow-y-auto bg-light-brown2"
                       id="pills-ingredients"
@@ -675,7 +691,8 @@
 
                 <div class="button pt-4 mt-4 border-top">
                   <button
-                    class="btn gradient-orange-1 rounded-4 py-2 px-3 d-flex align-items-center gap-2"
+                    onclick="shuffleMeals()"
+                    class="btn gradient-orange-1 rounded-3 py-2 px-3 d-flex align-items-center gap-2"
                   >
                     <i class="fa-solid fa-arrows-rotate text-white"></i>
                     <p class="mb-0 text-sm text-base-md fw-semibold text-white">
@@ -691,5 +708,6 @@
     </header>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

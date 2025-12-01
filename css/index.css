@@ -7,10 +7,7 @@
   box-sizing: border-box;
 }
 
-*::selection {
-  background-color: var(--violet-700);
-  color: white;
-}
+
 
 html {
   scroll-behavior: smooth;
@@ -54,13 +51,16 @@ html {
   --gray-200: #4A5565;
   --gray-300: #364153;
 
-
   --orange: #FF6900;
   --light-orange:#FFEDD4;
 --brown:#D08700;
   --light-brown:#FEF9C2;
   --red:#FB2C36;
+  --red-100:#FB313A;
+  --red-200:#e7000b;
+  --red-300:#9f0712;
   --light-red:#FFE2E2;
+  --light-red-50:#FEF2F2;
   --red-200:#F54A00;
   --cyan:#2B7FFF;
   --beige-200:#FFEDD4;
@@ -152,6 +152,13 @@ a {
 .text-red{
   color:var(--red);
 }
+.text-red-200{
+  color:var(---red-200);
+}
+.text-red-300{
+  color:var(--red-300);
+}
+
 .text-cyan{
   color:var(--cyan);
 }
@@ -200,6 +207,9 @@ a {
 }
 .bg-light-red{
   background-color:var(--light-red);
+}
+.bg-light-red-50{
+  background-color:var(--light-red-50);
 }
 .bg-light-pink{
   background-color:var(--light-pink);
@@ -356,6 +366,14 @@ a {
   height: 30px;
   border: 2px solid #ffb86a;
 }
+
+.navbar ul li i:hover {
+  color : var(--orange);
+}
+.navbar .navbar-collapse ul li:hover a {
+  color : var(--orange);
+
+}
 /* nav************************************* */
 
 /* image section************************************* */
@@ -377,6 +395,9 @@ a {
 .border-yellow{
 
  border-left: var(--yellow) 4px  solid;}
+.border-red{
+
+ border-left: var(--red-100) 4px  solid;}
 
  .row .food-image , .inner{
  
@@ -393,4 +414,30 @@ a {
   max-height: 340px;
  }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: var(--orange);
+    background-color:transparent;
+    border-bottom: var(--orange) 2px solid;
+}
+.nav-pills .nav-link {
+    border-radius: 0;
+}
+.nav-link:hover, .nav-link:focus {
+  --bs-nav-link-hover-color:#364153;
+  color: var(--bs-nav-link-hover-color) !important;
+}
 
+.right-side-section span.bg-beige-200{
+  transition: background-color 0.2s ;
+}
+.right-side-section span.bg-beige-200:hover{
+background-color: #FFD7A8;
+cursor: pointer;
+}
+.button button{
+  transition: all 0.3s;
+}
+.button button:hover{
+  transform: scale(1.05);
+  background-image: linear-gradient(56deg,rgba(244, 71, 0, 1) 0%, rgba(231, 0, 8, 1) 72%); ;
+}
