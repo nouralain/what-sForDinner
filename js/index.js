@@ -1,4 +1,4 @@
-var meals = [
+let meals = [
   //Creamy Spaghetti
   {
     mealTitle: "Creamy Spaghetti Carbonara",
@@ -547,7 +547,7 @@ var meals = [
     tips: [
       "Marinate chicken overnight for deeper flavor",
       "Use full-fat coconut cream for richest sauce",
-      "Adjust spice level by varying the tikka paste amount",
+      "Adjust spice level by letying the tikka paste amount",
       "Serve with naan bread and basmati rice",
     ],
 
@@ -824,376 +824,70 @@ var meals = [
   },
 ];
 
+let variables = {
+  foodImage: document.getElementById("foodImage"),
+  rate: document.getElementById("rate"),
+  reviews: document.getElementById("reviews"),
+  prepTime: document.getElementById("prepTime"),
+  cookTime: document.getElementById("cookTime"),
+  servings: document.getElementById("servings"),
+  level: document.getElementById("level"),
+  country: document.getElementById("country"),
+  mealTitle: document.getElementById("mealTitle"),
+  mealDesc: document.getElementById("mealDesc"),
+  calories: document.getElementById("calories"),
+  protein: document.getElementById("protein"),
+  carbs: document.getElementById("carbs"),
+  fat: document.getElementById("fat"),
+};
+
 function shuffleMeals() {
-  var randomIndex = Math.floor(Math.random() * meals.length); //for randomizing the indexes (local to keep generating numbers in each click)
-  var container = document.getElementById("container"); //this variable carries the element scope
+  let randomIndex = Math.floor(Math.random() * meals.length); //for randomizing the indexes (local to keep generating numbers in each click)
 
   //the replaced content after pressing the button
-  container.innerHTML = `<div class="row mt-5">
-            <div class="left-side-section col-12 col-lg-5 p-lg-0">
-              <div
-                class="food-image overflow-hidden rounded-top-4 rounded-top-0-xl rounded-start-4-xl position-relative"
-              >
-                <img
-                  src=${meals[randomIndex].mealImage}
-                  alt="Creamy Spaghetti Carbonara "
-                  class="w-100 h-100 d-block object-fit-cover object-center"
-                />
-                <div
-                  class="reviews py-2 px-3 bg-white rounded-pill position-absolute"
-                >
-                  <i class="fa-solid fa-star text-yellow"></i>
-                  <span class="text-sm text-base-md fw-semibold">${meals[randomIndex].rate}</span>
-                  <span class="text-xs text-sm-md text-gray-100"
-                    >${meals[randomIndex].reviews}</span
-                  >
-                </div>
-                <div
-                  class="info bg-white p-4 rounded-4 position-absolute d-flex align-items-center justify-content-around"
-                >
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="fa-solid fa-clock text-orange"></i>
-                    <span class="text-xs text-sm-md text-gray-100"
-                      >Prep Time</span
-                    >
-                    <span class="text-sm text-base-md fw-bold">${meals[randomIndex].prepTime}</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="fa-solid fa-fire-burner text-red"></i>
-                    <span class="text-xs text-sm-md text-gray-100"
-                      >Cook Time
-                    </span>
-                    <span class="text-sm text-base-md fw-bold">${meals[randomIndex].cookTime}</span>
-                  </div>
-                  <div class="d-flex flex-column align-items-center">
-                    <i class="fa-solid fa-users text-cyan"></i>
-                    <span class="text-xs text-sm-md text-gray-100"
-                      >Servings
-                    </span>
-                    <span class="text-sm text-base-md fw-bold">${meals[randomIndex].servings} </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+  variables.foodImage.setAttribute("src", `${meals[randomIndex].mealImage}`);
+  variables.rate.innerHTML = `${meals[randomIndex].rate}`;
+  variables.reviews.innerHTML = `${meals[randomIndex].reviews}`;
+  variables.prepTime.innerHTML = `${meals[randomIndex].prepTime}`;
+  variables.cookTime.innerHTML = `${meals[randomIndex].cookTime}`;
+  variables.servings.innerHTML = `${meals[randomIndex].servings}`;
+  variables.level.innerHTML = `${meals[randomIndex].level}`;
+  variables.country.innerHTML = `${meals[randomIndex].country}`;
+  variables.mealTitle.innerHTML = `${meals[randomIndex].mealTitle}`;
+  variables.mealDesc.innerHTML = `${meals[randomIndex].mealDesc}`;
+  variables.calories.innerHTML = `${meals[randomIndex].nutritions[0]}`;
+  variables.protein.innerHTML = `${meals[randomIndex].nutritions[1]}`;
+  variables.carbs.innerHTML = `${meals[randomIndex].nutritions[2]}`;
+  variables.fat.innerHTML = `${meals[randomIndex].nutritions[3]}`;
 
-            <div class="right-side-section col-12 col-lg-7 p-lg-0">
-              <div
-                class="inner rounded-bottom-4 rounded-bottom-0-xl rounded-end-4-xl bg-white p-4 p-lg-5"
-              >
-                <div
-                  class="d-md-flex flex-column justify-content-md-between align-items-md-center flex-md-row-reverse"
-                >
-                  <!-- save and share icons -->
-                  <div
-                    class="d-flex justify-content-end align-items-center gap-2"
-                  >
-                    <span
-                      class="bg-beige-200 h-50px w-50px rounded-3 d-flex justify-content-center align-items-center"
-                      ><i class="fa-solid fa-bookmark text-red-200"></i
-                    ></span>
-                    <span
-                      class="bg-beige-200 h-50px w-50px rounded-3 d-flex justify-content-center align-items-center"
-                      ><i class="fa-solid fa-share-nodes text-red-200"></i
-                    ></span>
-                  </div>
-
-                  <!-- level and country spans and title and desc -->
-                  <div>
-                    <div>
-                      <span
-                        class="text-green bg-light-green rounded-pill py-2 px-2 text-xs fw-semibold me-2"
-                        >${meals[randomIndex].level}</span
-                      >
-                      <span
-                        class="text-blue bg-light-blue rounded-pill py-2 px-2 text-xs fw-semibold"
-                        >${meals[randomIndex].country}</span
-                      >
-                    </div>
-                    <h2 class="text-2xl fw-bold mb-2 mt-3 text-4xl-md">
-                      ${meals[randomIndex].mealTitle}
-                    </h2>
-
-                    <p class="text-sm text-lg-md text-gray-100">
-                      ${meals[randomIndex].mealDesc}
-                    </p>
-                  </div>
-                </div>
-
-                <!-- extend -->
-                <div
-                id="extend"  class=" border-red  align-items-center gap-3 p-3 bg-light-red-50 rounded-3 mb-3 d-none "
-                >
-                  <i
-                    class="fa-solid fa-triangle-exclamation text-red fa-lg"
-                  ></i>
-                  <div>
-                    <h3 class="text-sm text-base-md fw-semibold text-red-300 mb-0">
-                      Extended Preparation Time
-                    </h3>
-                    <p class="text-xs text-sm-md text-red-200 mb-0">
-                      This recipe requires more than 45 minutes to prepare. Plan
-                      accordingly!
-                    </p>
-                  </div>
-                </div>
-
-                <div class="navs-tabs-body">
-                  <!-- tabs list -->
-                  <ul
-                    class="d-flex align-items-center justify-content-around nav my-nav nav-pills mb-4 p-3 border-bottom"
-                    id="pills-tab"
-                    role="tablist"
-                  >
-                    <li class="nav-item my-nav-item" role="presentation">
-                      <button
-                        class="nav-link my-nav-link active"
-                        id="pills-ingredients-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-ingredients"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-ingredients"
-                        aria-selected="true"
-                      >
-                        <i class="fa-solid fa-list-check text-gray-100"></i>
-                        <span
-                          class="text-xs text-base-md fw-semibold text-gray-100"
-                          >Ingredients</span
-                        >
-                      </button>
-                    </li>
-
-                    <li class="nav-item my-nav-item" role="presentation">
-                      <button
-                        class="nav-link my-nav-link"
-                        id="pills-instructions-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-instructions"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-instructions"
-                        aria-selected="false"
-                      >
-                        <i class="fa-solid fa-book-open text-gray-100"></i>
-                        <span
-                          class="text-xs text-base-md fw-semibold text-gray-100"
-                          >Instructions</span
-                        >
-                      </button>
-                    </li>
-
-                    <li class="nav-item my-nav-item" role="presentation">
-                      <button
-                        class="nav-link my-nav-link"
-                        id="pills-nutrition-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-nutrition"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-nutrition"
-                        aria-selected="false"
-                      >
-                        <i class="fa-solid fa-chart-pie text-gray-100"></i>
-                        <span
-                          class="text-xs text-base-md fw-semibold text-gray-100"
-                          >Nutrition</span
-                        >
-                      </button>
-                    </li>
-
-                    <li class="nav-item my-nav-item" role="presentation">
-                      <button
-                        class="nav-link my-nav-link"
-                        id="pills-chef-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-chef"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-chef"
-                        aria-selected="false"
-                      >
-                        <i class="fa-solid fa-lightbulb text-gray-100"></i>
-                        <span
-                          class="text-xs text-base-md fw-semibold text-gray-100"
-                          >Chef's Tips</span
-                        >
-                      </button>
-                    </li>
-                  </ul>
-
-<!-- content inside tabs -->
-                  <div class="tab-content" id="pills-tabContent">
-                    <div
-                      class="tab-pane fade show active rounded-4 max-height-340 p-4 overflow-y-auto bg-light-brown2"
-                      id="pills-ingredients"
-                      role="tabpanel"
-                      aria-labelledby="pills-ingredients-tab"
-                      tabindex="0"
-                    ></div>
-                      
-
-                    <div
-                      class="tab-pane fade max-height-340 overflow-y-auto"
-                      id="pills-instructions"
-                      role="tabpanel"
-                      aria-labelledby="pills-instructions-tab"
-                      tabindex="0"
-                    ></div>
-                      
-                    <div
-                      class="tab-pane fade max-height-340 p-4 overflow-y-auto"
-                      id="pills-nutrition"
-                      role="tabpanel"
-                      aria-labelledby="pills-nutrition-tab"
-                      tabindex="0"
-                    >
-                      <div class="row">
-                        <div
-                          class="col-md-6 d-flex justify-content-between align-items-center mb-3 rounded-4 bg-gray-50 p-3"
-                        >
-                          <div class="d-flex align-items-center gap-3">
-                            <span
-                              class="bg-light-orange w-40px h-40px rounded-3 d-flex justify-content-center align-items-center"
-                              ><i class="fa-solid fa-fire text-orange"></i
-                            ></span>
-                            <span
-                              class="text-xs text-base-md fw-medium text-gray-300"
-                              >Calories</span
-                            >
-                          </div>
-                          <span class="text-base text-xl-md fw-bold"
-                            >${meals[randomIndex].nutritions[0]}</span
-                          >
-                        </div>
-
-                        <div
-                          class="col-md-6 d-flex justify-content-between align-items-center mb-3 rounded-4 bg-gray-50 p-3"
-                        >
-                          <div class="d-flex align-items-center gap-3">
-                            <span
-                              class="bg-light-blue w-40px h-40px rounded-3 d-flex justify-content-center align-items-center"
-                              ><i class="fa-solid fa-dumbbell text-blue"></i
-                            ></span>
-                            <span
-                              class="text-xs text-base-md fw-medium text-gray-300"
-                              >Protein
-                            </span>
-                          </div>
-                          <span class="text-base text-xl-md fw-bold">${meals[randomIndex].nutritions[1]} </span>
-                        </div>
-
-                        <div
-                          class="col-md-6 d-flex justify-content-between align-items-center mb-3 rounded-4 bg-gray-50 p-3"
-                        >
-                          <div class="d-flex align-items-center gap-3">
-                            <span
-                              class="bg-light-brown w-40px h-40px rounded-3 d-flex justify-content-center align-items-center"
-                              ><i class="fa-solid fa-wheat-awn text-brown"></i
-                            ></span>
-                            <span
-                              class="text-xs text-base-md fw-medium text-gray-300"
-                              >Carbohydrates</span
-                            >
-                          </div>
-                          <span class="text-base text-xl-md fw-bold">${meals[randomIndex].nutritions[2]}</span>
-                        </div>
-
-                        <div
-                          class="col-md-6 d-flex justify-content-between align-items-center mb-3 rounded-4 bg-gray-50 p-3"
-                        >
-                          <div class="d-flex align-items-center gap-3">
-                            <span
-                              class="bg-light-red w-40px h-40px rounded-3 d-flex justify-content-center align-items-center"
-                              ><i class="fa-solid fa-droplet text-red"></i
-                            ></span>
-                            <span
-                              class="text-xs text-base-md fw-medium text-gray-300"
-                              >Fat</span
-                            >
-                          </div>
-                          <span class="text-base fw-bold">${meals[randomIndex].nutritions[3]}</span>
-                        </div>
-
-                        <div
-                          class="col-md-6 d-flex justify-content-between align-items-center mb-3 rounded-4 bg-gray-50 p-3"
-                        >
-                          <div class="d-flex align-items-center gap-3">
-                            <span
-                              class="bg-light-green w-40px h-40px rounded-3 d-flex justify-content-center align-items-center"
-                              ><i class="fa-solid fa-seedling text-green"></i
-                            ></span>
-                            <span
-                              class="text-xs text-base-md fw-medium text-gray-300"
-                              >Fiber</span
-                            >
-                          </div>
-                          <span class="text-base text-xl-md fw-bold">${meals[randomIndex].nutritions[4]}</span>
-                        </div>
-
-                        <div
-                          class="col-md-6 d-flex justify-content-between align-items-center"
-                        >
-                          <div class="d-flex align-items-center gap-3">
-                            <span
-                              class="bg-light-pink w-40px h-40px rounded-3 d-flex justify-content-center align-items-center"
-                              ><i class="fa-solid fa-cube text-pink"></i
-                            ></span>
-                            <span
-                              class="text-xs text-base-md fw-medium text-gray-300"
-                              >Sodium</span
-                            >
-                          </div>
-                          <span class="text-base text-xl-md fw-bold"
-                            >${meals[randomIndex].nutritions[5]}</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="tab-pane fade max-height-340 overflow-y-auto"
-                      id="pills-chef"
-                      role="tabpanel"
-                      aria-labelledby="pills-chef-tab"
-                      tabindex="0"
-                    ></div>
-                  </div>
-                </div>
-
-                <div class="button pt-4 mt-4 border-top">
-                  <button
-                    onclick="shuffleMeals()"
-                    class="btn gradient-orange-1 rounded-3 py-2 px-3 d-flex align-items-center gap-2"
-                  >
-                    <i class="fa-solid fa-arrows-rotate text-white"></i>
-                    <p class="mb-0 text-sm text-base-md fw-semibold text-white">
-                      Try Another Recipe
-                    </p>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>`;
   hideAndShowAlert(randomIndex);
   displayIngredients(randomIndex);
   displayInstructions(randomIndex);
   displayTips(randomIndex);
+  window.scrollTo({
+    top: 130,
+    behavior: "smooth",
+  });
 }
 
 //function to show and hide the alert depending on the value of the key "extend"
 function hideAndShowAlert(index) {
-  var extend = document.getElementById("extend");
+  let extend = document.getElementById("extend");
 
   if (meals[index].extend === true) {
     extend.classList.remove("d-none");
     extend.classList.add("d-flex");
   }
+  else{
+    extend.classList.add("d-none");
+    extend.classList.remove("d-flex");
+  }
 }
 
 //function to display the ingradients based on how many indexes in the nested array inside the object
 function displayIngredients(index) {
-  var ingredientContainer = ""; //variable to concat the ingredients inside of it
-  for (var i = 0; i < meals[index].ingredient.length; i++) {
+  let ingredientContainer = ""; //variable to concat the ingredients inside of it
+  for (let i = 0; i < meals[index].ingredient.length; i++) {
     ingredientContainer += `<div
                         class="d-flex align-items-center justify-content-start gap-3 mb-3"
                       >
@@ -1211,8 +905,8 @@ function displayIngredients(index) {
 
 //function to display the instructions
 function displayInstructions(index) {
-  var instructContainer = "";
-  for (var i = 0; i < meals[index].instructions.length; i++) {
+  let instructContainer = "";
+  for (let i = 0; i < meals[index].instructions.length; i++) {
     instructContainer += `<div
                         class="d-flex align-items-center justify-content-start gap-3 mb-4"
                       >
@@ -1231,8 +925,8 @@ function displayInstructions(index) {
 
 //function to display the tips
 function displayTips(index) {
-  var tipsContainer = "";
-  for (var i = 0; i < meals[index].tips.length; i++) {
+  let tipsContainer = "";
+  for (let i = 0; i < meals[index].tips.length; i++) {
     tipsContainer += `<div
                         class="border-yellow d-flex align-items-center gap-3 p-3 bg-light-brown2 rounded-3 mb-3"
                       >
