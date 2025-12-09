@@ -877,8 +877,7 @@ function hideAndShowAlert(index) {
   if (meals[index].extend === true) {
     extend.classList.remove("d-none");
     extend.classList.add("d-flex");
-  }
-  else{
+  } else {
     extend.classList.add("d-none");
     extend.classList.remove("d-flex");
   }
